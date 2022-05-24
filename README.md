@@ -48,6 +48,10 @@ Similar propozitiile vor fi impartite tot in acelasi format x% antrenare, y% val
 
 Interpretare distributie antrenare/validare/testare: pt xyz = 0.8 0.1 0.1 vom avea
 
+|A|b|
+|-|-|
+|c|d|
+
 | Synsets  | #1 | #2 | #3 | #4 | #5 |
 | Synsets  | --- | --- | --- | --- | --- |
 | Literalul initial are | 10 | 4 | 6 | 0 | 0 |
