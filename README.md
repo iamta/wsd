@@ -2,7 +2,7 @@
 
 ## Statistici status curent WSD Database si afisare grafica
 
-Această tema se bazează pe setul de date de [aici](https://drive.google.com/file/d/1IV_nodlm-dw-EWl1DtngkATgAldEdAGO/view). Descrierea setului de date o gasiti [aici](docs/"Romanian WordNet & WSD DB description.md").
+Această tema se bazează pe setul de date de [aici](https://drive.google.com/file/d/1IV_nodlm-dw-EWl1DtngkATgAldEdAGO/view). Descrierea setului de date o gasiti [aici]("docs/Romanian WordNet & WSD DB description.md").
 
 **Scop:** Obtinerea de date despre ce s-a facut pana in acest moment + afisarea lor intr-un format grafic
 
