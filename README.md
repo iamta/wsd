@@ -63,3 +63,30 @@ Generare statistici:
 - literali din datele de test si validare care nu apar in propozitii in setul de antrenare, dacă este cazul
 - explorarea datelor din mulțimile generate și elaborarea de anlize personalizate fiecărei echipe
 
+
+
+*Exemplu de metrica simpla*
+
+Am in total N literali ai caror propozitii trebuie sa le impart in 3 parti (train/dev/test).
+
+Daca pot gasi o metrica buna care sa imi spuna daca un literal e bine balansat, atunci pot face media intre toti literalii sa obtin o metrica la nivel de dataset, adica suma metrica literal / N. Deci subproblema e acum sa obtin o metrica la nivel de literal.
+
+Continuam. Un literal are M propozitii valide (ignoram TOATE propozitiile are au synset_correct = -1, inseamna ca propozitia respectiva este invalida, nici nu o luam in calcul, nu trebuie sa apara pe nicaieri), unde M este intre 0 si oricat. Daca M = 0 (ex un literal are 10 propozitii invalide, ignoram literalul cu totul).
+
+Acum fiecare propozitie are un synset corect din cele S synseturi posibile pentru acest literal.
+
+Se pune problema sa distribuim cele M propozitii in 3 parti (a.i. sa avem acelasi raport intre M si S pentru fiecare parte).
+
+Alegeti voi cum doriti sa le distribuiti, sa zicem ca aveam M = 10 propozitii, cu S = 3 synseturi posibile, cu impartirea urmatoare:
+
+    propozitiile 1-6 au sysnetul corect = S1
+    7-9 cu synsetul corect = S2
+    propozitia 10 cu synsetul corect S3
+
+si, impartite 80% train, 10% dev, 10% train, ati obtinut:
+
+    test: propozitia 1, 7 si 10 (a.i. in test aveti synseturile corecte S1 S2 si S3)
+    dev: propozitia 2 si 8 (aici aveti synseturile S1 si S2, nu mai sunt propozitii pt S3 ca le-ati pus deja in test care are prioritate mai mare)
+    train: restul de propozitii 3,4,5,6 (cu S1) si 9 (cu S2)
+
+O metrica simpla ar verifica sa existe 3 din 3 synseturi (aici S = 3 in exemplu) in train, test si dev. Adica, daca in test, am 3/3 = 1.0, in dev am 2/3 = 0.66, in train am 2/3 synseturi corecte prezente = tot 0.66. Deci per total, metrica pentru acest literal este ( 1.0 + 0.66 + 0.66 )/ 3
