@@ -1,4 +1,5 @@
-# wsd
+# Word Sense Disambiguation (WSD)
+
 ## Statistici status curent WSD Database si afisare grafica
 
 Această tema se bazează pe setul de date de aici. Descrierea setului de date o gasiti aici.
