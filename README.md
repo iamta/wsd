@@ -1,8 +1,8 @@
 # Word Sense Disambiguation (WSD)
 
-## Statistici status curent WSD Database si afisare grafica
-
 Setul de date se gaseste [aici](https://drive.google.com/file/d/1IV_nodlm-dw-EWl1DtngkATgAldEdAGO/view). Descrierea setului de date o gasiti [aici](https://github.com/iamta/wsd/blob/main/Romanian%20WordNet%20%26%20WSD%20DB%20%20description.md).
+
+## Statistici status curent WSD Database si afisare grafica
 
 **Scop:** Obtinerea de date despre ce s-a facut pana in acest moment + afisarea lor intr-un format grafic
 
@@ -25,3 +25,25 @@ De exemplu, un synset are 3 literali. Lista tuturor synseturilor se va prelua di
     E.Lista cu numar de propozitii realizat de catre fiecare user.
 
 Concluzie: Din toate aceste date va rezulta acoperirea bazei de date pe care s-a lucrat (exp. cate dintre synseturi sunt acoperite)
+
+
+## Script export din baza de date in format antrenare/validare/testare json
+
+**Scop:** La exportul din baza de date in format json, se cere (i) obtinerea unei distributii similare intre exemplele din multimile de antrenare, validare si testare și (ii) generarea de statistici.
+
+**Input:** fisierul pickle.
+
+**Output:** 3 fisiere json in acelasi format ca cel din baza de date pickle + metrica propusa de voi care sa demonstreze ca distributia intre split-uri este similara. Vezi exemplul de metrica de mai jos.
+
+Multimea de literali va fi impartita intr-un procent de x% antrenare, y% validare si z% testare, unde x + y + z = 1.
+
+Similar propozitiile vor fi impartite tot in acelasi format x% antrenare, y% validare si z% testare, unde x + y + z = 1.
+
+Exemplu: presupunem existenta unui literal cu 20 de propozitii si 5 synseturi, cu urmatoarea distributie: 10, 4, 6, 0, 0. Interpretare: 10 propozitii pt synset-ul 1, 4 pt synsetul 2, 6 pentru synsetul 3 etc. Daca x = 0.8 (adica 80%), y si z = 0.1 (adica 10% fiecare), sa avem in submultimea de date destinate antrenarii:
+
+    8 propozitii din cele 10 (80%) pt synsetul 1,
+    2 propozitii din 4 pt synsetul 2,
+    4 propozitii din 6 pt synsetul 3,
+    0 si 0 pt synseturile 4 si 5.
+
+Interpretare distributie antrenare/validare/testare: pt xyz = 0.8 0.1 0.1 vom avea 
