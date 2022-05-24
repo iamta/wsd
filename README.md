@@ -31,7 +31,7 @@ Concluzie: Din toate aceste date va rezulta acoperirea bazei de date pe care s-a
 
 **Scop:** La exportul din baza de date in format json, se cere (i) obtinerea unei distributii similare intre exemplele din multimile de antrenare, validare si testare și (ii) generarea de statistici.
 
-**Input:** fisierul pickle.
+**Input:** Fisierul pickle.
 
 **Output:** 3 fisiere json in acelasi format ca cel din baza de date pickle + metrica propusa de voi care sa demonstreze ca distributia intre split-uri este similara. Vezi exemplul de metrica de mai jos.
 
@@ -39,11 +39,17 @@ Multimea de literali va fi impartita intr-un procent de x% antrenare, y% validar
 
 Similar propozitiile vor fi impartite tot in acelasi format x% antrenare, y% validare si z% testare, unde x + y + z = 1.
 
-Exemplu: presupunem existenta unui literal cu 20 de propozitii si 5 synseturi, cu urmatoarea distributie: 10, 4, 6, 0, 0. Interpretare: 10 propozitii pt synset-ul 1, 4 pt synsetul 2, 6 pentru synsetul 3 etc. Daca x = 0.8 (adica 80%), y si z = 0.1 (adica 10% fiecare), sa avem in submultimea de date destinate antrenarii:
+**Exemplu:** presupunem existenta unui literal cu 20 de propozitii si 5 synseturi, cu urmatoarea distributie: 10, 4, 6, 0, 0. Interpretare: 10 propozitii pt synset-ul 1, 4 pt synsetul 2, 6 pentru synsetul 3 etc. Daca x = 0.8 (adica 80%), y si z = 0.1 (adica 10% fiecare), sa avem in submultimea de date destinate antrenarii:
 
     8 propozitii din cele 10 (80%) pt synsetul 1,
     2 propozitii din 4 pt synsetul 2,
     4 propozitii din 6 pt synsetul 3,
     0 si 0 pt synseturile 4 si 5.
 
-Interpretare distributie antrenare/validare/testare: pt xyz = 0.8 0.1 0.1 vom avea 
+Interpretare distributie antrenare/validare/testare: pt xyz = 0.8 0.1 0.1 vom avea
+
+synsets                 #1 	#2 	#3 	#4 	#5
+literal initial are 	10 	4 	6 	0 	0
+antrenare va avea       8 	2 	4 	0 	0
+validalidare va avea 	1 	1 	1 	0 	0
+testare va avea         1 	1 	1 	0 	0 
