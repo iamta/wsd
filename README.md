@@ -90,3 +90,21 @@ si, impartite 80% train, 10% dev, 10% train, ati obtinut:
     train: restul de propozitii 3,4,5,6 (cu S1) si 9 (cu S2)
 
 O metrica simpla ar verifica sa existe 3 din 3 synseturi (aici S = 3 in exemplu) in train, test si dev. Adica, daca in test, am 3/3 = 1.0, in dev am 2/3 = 0.66, in train am 2/3 synseturi corecte prezente = tot 0.66. Deci per total, metrica pentru acest literal este ( 1.0 + 0.66 + 0.66 )/ 3
+
+
+## Model baseline pentru Word Sense Disambiguation
+
+*Scop:* Dandu-se dataset-ul, creati un model care primeste o propozitie, un cuvant tinta din propozitie (substantiv), alegeti synset-ul corect pentru el.
+
+Metode de a rezolva problema:
+
+- Algoritmul lui [Lesk](https://en.wikipedia.org/wiki/Lesk_algorithm), sau simplified Lesk. Exista numeroase resurse care explica algoritmul. Exista si multe implementari, insa nu pe wordnet-ul romanesc. Scopul este sa implementati voi acest algorithm.
+- Metoda bazata pe retele neuronale, implementare la alegere (utilizati datasetul impartit random in 3 parti: 80% train, 10% dev si 10% test pentru retele neuronale, antrenare pe train pana cand nu se imbunatatesc rezultatele pe dev, cu testare pe test).
+
+ **Metrica** modelului, dandu-se tot datasetul, este acuratetea
+
+ - la nivel global (cate synseturi a ales corect din cate propozitii i-au fost date),
+ - la nivel de literal (pentru cuvantul x, de cate ori a ales sensul (synset-ul) corect?). Sensul corect il aveti in dataset deja marcat.
+
+
+
