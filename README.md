@@ -57,7 +57,7 @@ Interpretare distributie antrenare/validare/testare: pt xyz = 0.8 0.1 0.1
 
 **Explicatie:** un numar de x = 80% din propozitii vor fi distribuite in setul de antrenare pt synseul 1, y = 10% si z = 10% in validare si testare. INSA, la synsetul 2 avem 0.1*4 propozitii < 1 propozitie. Deci, va trebui sa mutam o propozitie intreaga cu prioritate pentru datele de test, inca (minim) una pentru datele de validare (tot 0.1 are si valid) si ce ramane se muta la setul de antrenare. Atentie! Se observa ca setul de date de validare si cel de test au prioritate la calcularea procentuala a numarului de propozitii corespunzator fiecarui synset in parte: TESTARE > VALIDARE > ANTRENARE. De aceea, pt synsetul 3 se alege o propozitie pentru testare si una pentru validare, iar restul in multimea de antrenare.
 
-**Hint:** Poti calcula pentru test **parte_intreaga_functie_ceil(z * <cate_propozitii_are_synsetul>)**, astfel incat valorile mai mici decat 1 sa devina 1.
+**Hint:** Se poate calcula pentru test **parte_intreaga_functie_ceil(z * <cate_propozitii_are_synsetul>)**, astfel incat valorile mai mici decat 1 sa devina 1.
 
 Generare statistici:
 - literali din datele de test si validare care nu apar in propozitii in setul de antrenare, dacă este cazul
