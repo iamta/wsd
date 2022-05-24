@@ -53,7 +53,7 @@ Interpretare distributie antrenare/validare/testare: pt xyz = 0.8 0.1 0.1 vom av
 |c|d|
 
 |Synsets|#1|#2|#3|#4|#5|
-|Synsets|---|---|---|---|---|
+|---|---|---|---|---|---|
 |Literalul initial are|10|4|6|0|0|
 |Antrenare va avea|8|2|4|0|0|
 |Validalidarea va avea|1|1|1|0|0|
