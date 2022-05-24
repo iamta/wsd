@@ -1,22 +1,22 @@
 # Word Sense Disambiguation (WSD)
 
-Setul de date se gaseste [aici](https://drive.google.com/file/d/1IV_nodlm-dw-EWl1DtngkATgAldEdAGO/view). Descrierea setului de date o gasiti [aici](https://github.com/iamta/wsd/blob/main/Romanian%20WordNet%20%26%20WSD%20DB%20%20description.md).
+Setul de date se gaseste [aici](https://drive.google.com/file/d/1IV_nodlm-dw-EWl1DtngkATgAldEdAGO/view). Descrierea setului de date se gaseste [aici](https://github.com/iamta/wsd/blob/main/Romanian%20WordNet%20%26%20WSD%20DB%20%20description.md).
 
 ## Statistici status curent WSD Database si afisare grafica
 
-**Scop:** Obtinerea de date despre ce s-a facut pana in acest moment + afisarea lor intr-un format grafic
+**Scop:** Obtinerea de date despre statistice legate de continutul bazei de date si afisarea acestora in format grafic
 
-Input: baza de date (fisierul pickle)
+**Input:** Baza de date (fisierul pickle)
 
-Output: pandas dataframes (daca nu se doreste implementarea interfetei grafice), sau interfata grafica cu statusul
+**Output:** Pandas dataframes (pentru implementare fara interfata grafica) sau interfata grafica pentru acces statistici
 
-Se cere:
+Optiuni:
 
     A. Numarul mediu de propozitii per literal
     B. Numarul mediu de synset-uri candidat (fara synsetul „-1“) per literal
-    C. Pentru fiecare literal avem n propozitii, iar acel literal are s synseturi. Prin urmare se cere calculul distributiei la nivel de literal pentru synset-urile posibile. Mai concret, se cere scoaterea unei statistici finale care sa cuprinda listati lieralii si pentru fiecare dintre acestia sa fie calculate metricile: media, varianta, deviatia standard, skewness (indicele/coeficient de asimetrie), numarul de synset-uri cu zero propozitii si suma totala de propozitii per literal.
+    C. Pentru fiecare literal a cate *n* propozitii si *s* synseturi, se poate obtine calculul distributiei la nivel de literal pentru synset-urile posibile. Mai concret, se obtin statistici finale care cuprind listati lieralii si pentru fiecare dintre acestia sunt calculate metricile: media, varianta, deviatia standard, skewness (indicele/coeficient de asimetrie), numarul de synset-uri cu zero propozitii si suma totala de propozitii per literal.
 
-De exemplu, daca avem 10 propozitii, si presupunem 3 synseturi posibile (ignoram tot timpul synsetul „-1“) numite 1, 2 si, respectiv, 3, atunci putem avea: 7 propozitii cu synsetul corect 1, 3 pentru synsetul 2, si nicio propozitie pentru synsetul 3, deci distributia ar fi 7-3-0. Pentru acest sir de valori putem calcula: media, varianta, deviatia standard, skewness (indicele/coeficient de asimetrie). Adaugam in afara de cele 4 valori pt fiecare literal si numarul de synset-uri cu zero propozitii (in exemplul de aici: 1 synset nu are nicio propozitie cu synsetul corect ales 3), si suma totala de propozitii per literal din exemplu, aceasta fiind 10 (aceasta ultima masura trebuie calculata oricum pentru rezovarea pct a).
+*De exemplu*, daca avem 10 propozitii, si presupunem 3 synseturi posibile (ignoram tot timpul synsetul „-1“) numite 1, 2 si, respectiv, 3, atunci putem avea: 7 propozitii cu synsetul corect 1, 3 pentru synsetul 2, si nicio propozitie pentru synsetul 3, deci distributia ar fi 7-3-0. Pentru acest sir de valori putem calcula: media, varianta, deviatia standard, skewness (indicele/coeficient de asimetrie). Adaugam in afara de cele 4 valori pt fiecare literal si numarul de synset-uri cu zero propozitii (in exemplul de aici: 1 synset nu are nicio propozitie cu synsetul corect ales 3), si suma totala de propozitii per literal din exemplu, aceasta fiind 10 (aceasta ultima masura trebuie calculata oricum pentru rezovarea pct a).
 
     D. Privind invers problema, se cere lista tuturor synseturilor atinse, si numarul de propozitii pentru fiecare.
 
